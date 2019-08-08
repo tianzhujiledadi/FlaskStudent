@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>成绩</td>
+    </tr>
+    </thead>
+
+<tbody>
+{% for student in  student_list  %}
+    <tr>
+        <td>{{ student.name}}</td>
+        <td>{{ student.age.translate }}</td>
+        <td>{{ student.score }}</td>
+    </tr>
+{% endfor %}
+</tbody>
+upper将字母完全转换为大写；zfill一共几位数，不够在左边田0；
+rjust，一共几位数，不够在左边设置值默认是0
+
+
+</table>
+</body>
+</html>

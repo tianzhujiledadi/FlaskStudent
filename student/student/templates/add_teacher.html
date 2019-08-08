@@ -1,0 +1,14 @@
+{% extends  "base.html" %}
+{% block title %}
+老师注册
+{% endblock %}
+{% block content %}
+    <form action="" class="form" method="post">
+    {{ teacherForm.csrf_token }}
+        <span>{{ teacherForm.name }}</span><br>
+    {{ teacherForm.age }}<br>
+    {{ teacherForm.gender }}<br>
+        {{ teacherForm.course }}<br>
+        <input type="submit" value="提交" class="form-control" >
+    </form>
+{% endblock %}
