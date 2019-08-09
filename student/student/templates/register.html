@@ -128,6 +128,33 @@
 {#          }#}
 {#      )#}
 {#</script>#}
+<script>
+    $('#username').blur(
+        function () {
+            var  value=$("#username").val();
+            var  url="/userValid/"
+            var  sendData={
+                "username":value,
+                "csrf_token":"{{ csrf_token() }}"//csrf_token校验
+            };
+            $.ajax({
+                url:url,
+                type:"post",
+                data:sendData,
+                success:function(data) {//数据发送成功并且成功返回
+                    if (data.code==400){
+                        $("#submit").attr("disabled",True)
+                    }else{
+                        $("#submit").attr("disabled",False)
+                    }
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            })
+        }
+    )
+</script>
 </body>
 </html>
 
